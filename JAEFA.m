@@ -26,12 +26,13 @@ Distance    = 70;
 velt        = 20;
 % in degrees per second
 angspdthrs  = 30;
-% Minimal fixation duration (remove fixation with too short duration)
-minfixdur   = 0.020; 
-% Minimal saccade sample (combine fixations that are too short apart)
-minsaccsp   = 10;
+% Minimal fixation duration in ms (remove fixation with too short duration)
+minfixdur   = 20; % set to 0 to include all fixations
+% Minimal saccade duration in ms (combine fixations that are too short apart)
+minsaccsp   = 10; % set to 0 to consider all saccades
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+samplerate  = 1000; % ideal sample rate
+minfixdur   = minfixdur/samplerate;
 % Degree per visual angle
 DPP         = atand( (Screen_Size(1)/2) / Distance) / (Res(3)/2);
 SR          = round(1/mean(diff(timesample)));
@@ -60,7 +61,6 @@ if numsample > velt
     eyex(exlIdx1t) = NaN;
     eyey(exlIdx1t) = NaN;
     
-    samplerate = 1000;
     endtime    = floor(timesample(end)*samplerate);
     xi1        = (1:endtime)/samplerate;
     % resample to 1ms per datapoint

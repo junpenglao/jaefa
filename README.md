@@ -22,9 +22,9 @@ Distance    = 70;
 velt        = 20;
 % in degrees per second
 angspdthrs  = 30;
-% Minimal fixation duration (remove fixation with too short duration)
-minfixdur   = 0.020; 
-% Minimal saccade sample (combine fixations that are too short apart)
-minsaccsp   = 10;
+% Minimal fixation duration in ms (remove fixation with too short duration)
+minfixdur   = 20; % set to 0 to include all fixations
+% Minimal saccade duration in ms (combine fixations that are too short apart)
+minsaccsp   = 10; % set to 0 to consider all saccades
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ```
