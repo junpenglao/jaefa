@@ -1,9 +1,10 @@
 # JAEFA
-Just Another Eye-movement Filtering Algorithm (JAEFA) to preprocess raw eye tracking data to fixation event.  
+Just Another Eye-movement Filtering Algorithm (JAEFA) to turn raw eye tracking data into fixation event.  
 
 ```
 >> fixmat = JAEFA(eyex,eyey,timestamp,CondInfo,plotopt);
-
+% output format:
+% fixmat - [x_fix,y_fix,dur_fix,num_fix,time_start,time_end,sample_start,sample_end,condinfo]
 ```
 An example is shown in HOWTO.m,  
 
